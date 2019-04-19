@@ -12,6 +12,7 @@ AWS_REGION="us-east-1"
 AWS_REPOSITORY="dockerdemo"
 CLUSTER="ECScluster"
 TAG="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$AWS_REPOSITORY:$BUILD_NUMBER"
+echo "...$BUILD_NUMBER is the latest build"
 echo $TAG
 sed -i='' "s|app:latest|$TAG|" docker-compose.yml
 /usr/local/bin/docker-compose build
