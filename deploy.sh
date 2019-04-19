@@ -12,9 +12,10 @@ AWS_REGION="us-east-1"
 AWS_REPOSITORY="dockerdemo"
 CLUSTER="ECScluster"
 TAG=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$AWS_REPOSITORY:$BUILD_NUMBER
+echo $TAG
 sed -i='' "s|app:latest|$TAG|" docker-compose.yml
 /usr/local/bin/docker-compose build
 eval $(aws ecr get-login --region $AWS_REGION --no-include-email) 
-docker push $TAG
+/usr/bin/docker push $TAG
 /usr/local/bin/ecs-cli configure --region us-east-1 --cluster $CLUSTER
 /usr/local/bin/ecs-cli compose --project-name nodejs-service service up
