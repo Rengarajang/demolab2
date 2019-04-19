@@ -11,6 +11,7 @@ AWS_ACCOUNT_ID="624729804591"
 AWS_REGION="us-east-1"
 AWS_REPOSITORY="dockerdemo"
 CLUSTER="ECScluster"
+BUILD_NUMBER=$1
 TAG="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$AWS_REPOSITORY:$BUILD_NUMBER"
 echo "...$BUILD_NUMBER is the latest build"
 echo $TAG
