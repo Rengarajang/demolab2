@@ -2,8 +2,8 @@ version: '3'
 services:
   app:
     image: app:latest
-    container_name: nodejsapp 
-    restart: always    
-    build: .    
+    container_name: nodejsapp
+    restart: always 
+    build: . 
     ports:
       - "3500:8080"

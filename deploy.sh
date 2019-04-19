@@ -7,6 +7,8 @@ aws configure set default.output json
 echo "Configured AWS CLI." 
 }
 #configure_aws_cli
+AWS_ACCOUNT_ID="624729804591 "
+AWS_REGION="us-east-1"
 AWS_REPOSITORY="dockerdemo"
 CLUSTER="ECScluster"
 TAG=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$AWS_REPOSITORY:$BUILD_NUMBER
